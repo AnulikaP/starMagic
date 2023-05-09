@@ -1,5 +1,7 @@
 import { useEffect, useState} from 'react'
 import star from './stars.png';
+import { Link } from 'react-router-dom';
+
 
 const StarwarData = () => {
  const [movie, setMovie] = useState(null);
@@ -61,15 +63,18 @@ const StarwarData = () => {
                    </div>
 
                    <p>{numLimit(actualMovie.opening_crawl, 260)}</p>
-                   <div className='info'>
-                   <a href='#'>More Info</a>
-                   </div>
+
+                   <nav className='info'>
+
+                   <Link to={'/' + (index + 1)}><p>More Info</p></Link>
+                   </nav>
                    </li>
              );
                 
             })}
         </ul>
         </div>
+        
 
     </div>
   )

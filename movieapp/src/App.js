@@ -1,13 +1,24 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import StarwarData from './StarwarData';
+import StarDetails from './MoviePage.js/StarDetails';
+
 
 function App() {
   return (
+    <>
     <div className="App">
-      <StarwarData/>
+    
+      <Routes>
+        <Route path='/' element={<StarwarData/>}/>
+        <Route path='/:id' element={<StarDetails/>}/>
+        
+      </Routes>
       
     </div>
+    
+    </>
   );
 }
 
