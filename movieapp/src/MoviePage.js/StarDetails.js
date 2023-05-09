@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import '../App.css';
+import star from '../stars.png';
 
 
 
@@ -84,24 +85,29 @@ const StarDetails = () => {
 
                 return (
                 
-                    <Link to='/'>Back to list</Link>
+                   
+                    <header>
+            <img src={star} alt='starwars' />
+        
+              </header>
+             
 
                     <div className='pageWrapper'>
-
-                    <header className='pageHeader'>
+                    <Link to='/' className='navBar'>Back to list</Link>
+                    <div className='pageHeader'>
 
                         <h1>{movie.title}</h1>
 
                         <p>Director:{movie.director}</p>
 
                         <p>Producer:{movie.producer}</p>
-                    </header>
-                    <div>
-                        <p>Description</p>
-                        <p>{movie.opening_crawl}</p>
                     </div>
                     <div>
-                        <p>Characters</p>
+                        <p className='subject'>Description</p>
+                        <p className='essay'>{movie.opening_crawl}</p>
+                    </div>
+                    <div className='details'>
+                        <p className='subject'>Characters</p>
                         <ul>
                             {character.map((character) => (
                              <li key={character.url}>{character.name}</li>
@@ -110,8 +116,8 @@ const StarDetails = () => {
                         </ul>
 
                     </div>
-                    <div>
-                        <p>Planets</p>
+                    <div className='details'>
+                        <p className='subject'>Planets</p>
                         <ul>
                             {planets.map((planet) => (
                               <li key={planet.url}>{planet.name}</li>
@@ -120,8 +126,8 @@ const StarDetails = () => {
                         </ul>
     
                     </div>
-                    <div>
-                        <p>Species</p>
+                    <div className='details'>
+                        <p className='subject'>Species</p>
                         <ul>
                             {species.map((specie) => (
                           <li key={specie.url}>{specie.name}</li>
@@ -129,8 +135,8 @@ const StarDetails = () => {
                             ))}
                         </ul>
                     </div>
-                    <div>
-                        <p>Starships</p>
+                    <div className='details'>
+                        <p className='subject'>Starships</p>
                         <ul>
                             {starships.map((starship) => (
                               <li key={starship.url}>{starship.name}</li>
@@ -140,8 +146,8 @@ const StarDetails = () => {
                        
     
                     </div>
-                    <div>
-                        <p>Vehicles</p>
+                    <div className='details'>
+                        <p className='subject'>Vehicles</p>
                         <ul>
                             {vehicles.map((vehicle) => (
                               <li key={vehicle.url}>{vehicle.name}</li>
