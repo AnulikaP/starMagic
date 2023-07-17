@@ -67,14 +67,6 @@ const StarDetails = () => {
 
     }, [id])
 
-    // const numLimit = (text, maxlength) => {
-    //             if(text.length > maxlength) {
-    //                 return text.slice(0, maxlength).trim()+'';
-    //             } else {
-    //                 return text
-    //             }
-    //         }
-
 
 
   return (
