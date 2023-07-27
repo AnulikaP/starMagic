@@ -43,7 +43,7 @@ const StarwarData = () => {
 
   return (
     <div className='mainContainer'>
-        {loading && <div>A moment pleaseee....</div>}
+        {loading && <div className='loader'>A moment pleaseee....</div>}
         {error && <div> {`There is a problem fetching the data ${error}`} </div> }
 
         <header>
